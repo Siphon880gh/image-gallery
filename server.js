@@ -43,6 +43,7 @@ app.post('/collections', (req, res) => {
 
 app.get('/collection/:id', (req, res) => {
     let {id} = req.params;
+    id = decodeURIComponent(id);
     res.json({type:"collection", status: "success", debug:id})
 })
 

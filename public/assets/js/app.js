@@ -24,14 +24,25 @@ let app = {
             return (creds&&creds!=="")?creds:"*";
         })(urlSearchParams.get("creds"));
         // console.log({credentials});
+
+        // Load image galleries from credentials or *
         $.post("/collections", {credentials}).done(res=>{
-            console.log(res);
-        }) 
+            let {collections}=res;
+            let template = $(".template-dd-collections").html();
+
+            for(let i = 0; i<collections.length; i++) {
+                let html = template.replaceAll("__collection__", collections[i]);
+                $(".dropdown-menu").append(html);
+            } 
+        });
+
         // Delegate event handlers for clicking image into full image modal
         this.delegators.imgToModal();
     },
     reinit: function(collectionId) {
-        $.get(`/collection/${collectionId}`).done(dat=>{console.log(dat);});
+        $.get(`/collection/${ encodeURIComponent(collectionId) }`).done(dat=>{
+            console.log(dat);
+        });
     },
     delegators: {
         imgToModal: function() {
