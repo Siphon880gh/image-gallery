@@ -104,7 +104,7 @@
 
 /** Image modal **/
 
-.modal:not(.fade) {
+.modal:not(.show) {
     z-index: -1;
 }
 
