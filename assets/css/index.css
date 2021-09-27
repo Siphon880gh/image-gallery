@@ -83,6 +83,15 @@
     display: block;
     max-width: 100%;
     height: auto;
-    vertical-align: middle;
     border: 0;
+}
+
+#imgModal .modal-content {
+    position: relative;
+}
+
+#imgModal .btn-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
 }
