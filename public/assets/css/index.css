@@ -36,6 +36,10 @@
     margin: .5rem 0 3rem 0;
 }
 
+.socials {
+    margin-bottom: 1rem;
+}
+
 .img-rollovers {
     text-align: center;
     font-weight: 300;
@@ -98,6 +102,10 @@
 
 
 /** Image modal **/
+
+.modal.fade {
+    z-index: -1;
+}
 
 #imgModal {
     display: block;
