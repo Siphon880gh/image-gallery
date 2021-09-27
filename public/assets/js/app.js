@@ -18,6 +18,8 @@ let app = {
             focus: true
         });
 
+        // Load collection
+
         // Delegate event handlers for clicking image into full image modal
         this.delegators.imgToModal();
     },
