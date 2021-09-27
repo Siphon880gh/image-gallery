@@ -21,7 +21,7 @@ Image galleries with optional credentials.
 
 :computer: Live Deployment:
 ---
-<a href="#" target="_blank">Check it out</a>
+<a href="https://image-galleries.herokuapp.com/" target="_blank">Check it out</a>
 
 :camera: Preview:
 ---
