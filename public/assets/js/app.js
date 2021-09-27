@@ -2,6 +2,7 @@
  * @namespace app
  * @public app
  * 
+ * @private files Contains the file sources for the current image gallery
  * @private $imgModal Points to image modal in HTML
  * @private imgModal Bootstrap image modal instance
  * 
@@ -35,13 +36,14 @@ let app = {
                 $(".dropdown-menu").append(html);
             } 
         });
-
-        // Delegate event handlers for clicking image into full image modal
-        this.delegators.imgToModal();
     },
     reinit: function(collectionId) {
-        $.get(`/collection/${ encodeURIComponent(collectionId) }`).done(dat=>{
-            console.log(dat);
+        $.get(`/collection/${ encodeURIComponent(collectionId) }`).done(data=>{
+            let {files} = data;
+            
+
+            // Delegate event handlers for clicking image into full image modal
+            this.delegators.imgToModal();
         });
     },
     delegators: {

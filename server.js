@@ -42,9 +42,16 @@ app.post('/collections', (req, res) => {
 })
 
 app.get('/collection/:id', (req, res) => {
-    let {id} = req.params;
-    id = decodeURIComponent(id);
-    res.json({type:"collection", status: "success", debug:id})
+    let {id:collectionId} = req.params;
+    // console.log({path:path.join(__dirname, "public", "collections", collectionId, "/")});
+
+    fs.readdir(path.join(__dirname, "public", "collections", collectionId, "/"), (err, files)=>{
+        if(!err) {
+            files = files.filter(file=>file.indexOf(".jpeg")>-1 || file.indexOf(".jpg")>-1 || file.indexOf(".bmp")>-1 || file.indexOf(".gif")>-1 || file.indexOf(".png")>-1 || file.indexOf(".tiff")>-1)
+            res.json({type:"collection", query:collectionId, status: "success", files})
+        } else
+            res.json({type:"collection", query:collectionId, status: "error", err});
+    })
 })
 
 app.listen(port, () => {
