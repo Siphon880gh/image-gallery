@@ -47,13 +47,14 @@
     width: 50%;
 }
 
-.img-rollover a {
-    margin-bottom: 1.5rem;
+.img-rollover {
+    cursor: pointer;
     height: 100%;
     display: block;
+    margin-bottom: 1.5rem;
 }
 
-.img-rollover a img {
+.img-rollover img {
     /** Thumbnail **/
     padding: .25rem;
     background-color: #fff;
