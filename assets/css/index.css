@@ -78,3 +78,11 @@
         width: 33.33333333%;
     }
 }
+
+#imgModal {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border: 0;
+}
