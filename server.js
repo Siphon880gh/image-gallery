@@ -12,9 +12,9 @@ app.get('/', (req, res) => {
     res.sendFile("./index.html")
 })
   
-app.get('/collections', (req, res) => {
-    const {credentials="*"} = req.params;
-    res.json({status: "Success", debug:credentials})
+app.post('/collections', (req, res) => {
+    let {credentials} = req.body;
+    res.json({type:"collections", status: "success", debug:credentials})
 })
 
 app.listen(port, () => {

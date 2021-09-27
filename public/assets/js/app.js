@@ -18,7 +18,16 @@ let app = {
             focus: true
         });
 
-        // Load collection
+        // Load credentials from URL
+        let urlSearchParams = new URLSearchParams(window.location.search);
+        const credentials = (function getCredsFromUrlQuery(creds) {
+            return (creds&&creds!=="")?creds:"*";
+        })(urlSearchParams.get("creds"));
+        console.log({credentials});
+        $.post("/collections", {credentials}).done(res=>{
+            console.log(res);
+        }) 
+
 
         // Delegate event handlers for clicking image into full image modal
         this.delegators.imgToModal();
