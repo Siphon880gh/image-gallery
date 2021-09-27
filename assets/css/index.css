@@ -88,10 +88,19 @@
 
 #imgModal .modal-content {
     position: relative;
+    padding: 10px;
 }
 
 #imgModal .btn-close {
     position: absolute;
     top: 5px;
     right: 5px;
+    z-index: 1;
+}
+
+#imgModal img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
 }
