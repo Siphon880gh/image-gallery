@@ -34,6 +34,10 @@ let app = {
             for(let i = 0; i<collections.length; i++) {
                 let html = template.replaceAll("__collection__", collections[i]);
                 $(".dropdown-menu").append(html);
+
+                // Load the first image gallery so it's not empty
+                if(i===0)
+                    app.reinit(collections[i]);
             } 
         });
     },
