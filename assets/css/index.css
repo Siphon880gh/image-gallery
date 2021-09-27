@@ -1,3 +1,5 @@
+/** Page **/
+
 .page {
     width: 100%;
     padding-right: .75rem;
@@ -40,7 +42,7 @@
 }
 
 
-/* img-rollover */
+/* Page: img-rollover */
 
 .img-rollover {
     flex: 0 0 auto;
@@ -79,6 +81,9 @@
     }
 }
 
+
+/** Image modal **/
+
 #imgModal {
     display: block;
     max-width: 100%;
@@ -103,4 +108,15 @@
     max-width: 100%;
     height: auto;
     margin: 0 auto;
+    border-radius: 5px;
+}
+
+#imgModal .modal-footer {
+    display: block;
+    text-align: center;
+}
+
+#imgModal .modal-title {
+    font-size: 1.25rem;
+    font-weight: 300;
 }

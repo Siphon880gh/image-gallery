@@ -12,14 +12,19 @@ $(() => {
             html = `<img src="${src}"/>`;
 
         // Set modal HTML
-        rerenderModal($imgModal, html);
+        rerenderModal($imgModal, {title: "Foobar", src});
 
         // Activate modal
         $imgModal.modal("show");
     });
 
     // Place specific HTML content into the image modal (either image in full screen style or resetting HTML to blank "")
-    function rerenderModal($modal, html) {
-        $modal.find('.modal-body').html(html);
+    function rerenderModal($modal, data) {
+        let {title, src} = data;
+        let $modalTitle = $modal.find('.modal-footer .modal-title'),
+            $imgContainer = $modal.find('.modal-body');
+
+        $modalTitle.text(title);
+        $imgContainer.html(`<img src="${src}"/>`);
     }
 })
