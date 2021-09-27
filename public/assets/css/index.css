@@ -103,7 +103,7 @@
 
 /** Image modal **/
 
-.modal.fade {
+.modal:not(.fade) {
     z-index: -1;
 }
 
