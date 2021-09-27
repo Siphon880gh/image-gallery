@@ -40,7 +40,14 @@ let app = {
     reinit: function(collectionId) {
         $.get(`/collection/${ encodeURIComponent(collectionId) }`).done(data=>{
             let {files} = data;
-            
+            let template = $(".template-img-rollover").html();
+            let $imgGallery = $(".img-rollovers");
+            $imgGallery.html(""); // Reset the gallery before appending
+
+            for(let i = 0; i<files.length; i++) {
+                let html = template.replaceAll("__file__", files[i]).replaceAll("__collection__", collectionId);
+                $imgGallery.append(html);
+            }
 
             // Delegate event handlers for clicking image into full image modal
             this.delegators.imgToModal();
