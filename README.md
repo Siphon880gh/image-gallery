@@ -16,8 +16,7 @@ Image galleries with optional credentials.
 - [Description](#description)
 - [Preview](#camera-preview)
 - [Installation and Usage](#minidisc-installation-and-usage)
-- [Advanced Use](#advanced-use)
-- [Future Version](#e-mail-meet-the-team)
+- [Advanced Use](#computer-advanced-use)
 
 :computer: Live Deployment:
 ---
@@ -34,6 +33,3 @@ Run on a node server. This image gallery lets you send different links to friend
 You can control what image galleries your friends see by adding a credentials query in the url (?creds=...) and setting the collections on your host server. Make sure to share the right url to your friends. If the url has an incorrect or no credentials, default credentials take place which is * on your host server settings.
 
 The setting is at credentials.json. The image galleries are in public/collections.
-
-## :crystal_ball: Future version
-- Feel free to contribute. Don't have anymore ideas on enhancing the image gallery right now.
