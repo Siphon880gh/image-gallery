@@ -110,9 +110,11 @@
 
 #imgModal {
     display: block;
-    max-width: 100%;
-    height: auto;
     border: 0;
+    max-width: 100%;
+    overflow-x: scroll;
+    height: 100vh;
+    overflow-y: scroll;
 }
 
 #imgModal .modal-content {
