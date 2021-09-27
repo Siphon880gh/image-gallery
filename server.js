@@ -19,6 +19,11 @@ app.post('/collections', (req, res) => {
     res.json({type:"collections", status: "success", debug:credentials})
 })
 
+app.post('/collection/:id', (req, res) => {
+    let {id} = req.params;
+    res.json({type:"collection", status: "success", debug:id})
+})
+
 app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`)
 })

@@ -36,7 +36,27 @@
                 </a>
             </div>
 
-            <p class="site-desc">Image galleries. <i>Advanced dev users:</i> Credentials in URL (?creds=...) can limit viewers to certain collections versus the default credentials (no credentials in URL).</p>
+            <p class="site-desc">Image galleries. <i>Advanced dev users:</i> You can control what image galleries your friends see by adding a credentials query in the url (?creds=...) and setting the collections on your host server. Make sure to share the right url to your
+                friends. If the url has an incorrect or no credentials, default credentials take place which is * on your host server settings.</p>
+        </div>
+
+        <div class="text-center">
+            <div class="dropdown">
+
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="ddCollections" data-bs-toggle="dropdown" aria-expanded="false">
+              
+                  Image galleries
+                </button>
+
+                <ul class="dropdown-menu" aria-labelledby="ddCollections">
+
+                </ul>
+
+                <template class="template-dd-collections">
+                    <li><a class="dropdown-item" href="#">__collection__</a></li>
+                </template>
+
+            </div>
         </div>
 
         <hr class="site-title-divider" />
