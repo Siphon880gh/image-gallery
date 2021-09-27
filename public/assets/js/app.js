@@ -45,7 +45,7 @@ let app = {
             $imgGallery.html(""); // Reset the gallery before appending
 
             for(let i = 0; i<files.length; i++) {
-                let html = template.replaceAll("__file__", files[i]).replaceAll("__collection__", collectionId);
+                let html = template.replaceAll("__file__", files[i]).replaceAll("__collection__", collectionId).replaceAll("__title__", files[i].replace(/\.jpeg|\.jpg|\.bmp|\.gif|\.png|\.gif/, ""));
                 $imgGallery.append(html);
             }
 
@@ -62,7 +62,10 @@ let app = {
                     html = `<img src="${src}"/>`;
         
                 // Set modal HTML
-                rerenderModal($imgModal, {title: "Foobar", src});
+                rerenderModal($imgModal, {
+                    src,
+                    title: src.replace(/.*\/|\\/, "").replace(/\.jpeg|\.jpg|\.bmp|\.gif|\.png|\.gif/, "")
+                });
         
                 // Activate modal
                 $imgModal.modal("show");
