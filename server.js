@@ -1,14 +1,11 @@
 const express = require("express");
-const nocache = require("nocache");
 const path = require("path");
 var fs = require("fs");
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(nocache());
 app.use(express.static("public"));
 
 app.get('/', (req, res) => {
@@ -54,6 +51,7 @@ app.get('/collection/:id', (req, res) => {
     })
 })
 
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`)
 })
