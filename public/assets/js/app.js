@@ -23,14 +23,15 @@ let app = {
         const credentials = (function getCredsFromUrlQuery(creds) {
             return (creds&&creds!=="")?creds:"*";
         })(urlSearchParams.get("creds"));
-        console.log({credentials});
+        // console.log({credentials});
         $.post("/collections", {credentials}).done(res=>{
             console.log(res);
         }) 
-
-
         // Delegate event handlers for clicking image into full image modal
         this.delegators.imgToModal();
+    },
+    reinit: function(collectionId) {
+        $.get(`/collection/${collectionId}`).done(dat=>{console.log(dat);});
     },
     delegators: {
         imgToModal: function() {
