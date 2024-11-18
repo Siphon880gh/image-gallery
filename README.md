@@ -9,7 +9,7 @@
 ---
 By Weng Fei Fung
 
-Image galleries with optional credentials. Control what images your friends see with credentials in the URL.
+Image galleries with optional credentials. Control what images your friends see with different URLs.
 
 :open_file_folder: Table of Contents:
 ---
